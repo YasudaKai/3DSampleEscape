@@ -7,7 +7,7 @@ public class ItemBox : MonoBehaviour
 {
     [SerializeField] Slot[] slots;
     [SerializeField] Slot selectedSlot;
-
+    
     
 
     public static ItemBox instance;
@@ -29,11 +29,28 @@ public class ItemBox : MonoBehaviour
             slot.HideSlotBGPanel();
         }
 
+        selectedSlot = null;
+        //この処理方法がわからず、ZoomPanelが開き続けていた。
+
         //Slotで選択された箇所のみBackGroundをつける。
         if (slots[position].OnSelectedSlot())
         {
             selectedSlot = slots[position];
         }
+        //selectedSlotに一旦itemがはいるとtrueになり続けるから
+        //どこかのSlotが常に選択状態になる
+        //そのせいで、他のSlotを押してもitemは入っていなくても
+        //ItemBoxのSelectedSlotにはSlotが入り続ける
+        //ほかのSlotを押してもZoomPanelが開いてしまう。
+    }
+
+    public Item GetSelectedItem()
+    {
+        if(selectedSlot != null)
+        {
+            return selectedSlot.GetItem();
+        }
+        return null;
     }
 
     //現状キューブを選択状態じゃないと、ギミック解除

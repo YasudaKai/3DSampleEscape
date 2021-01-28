@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class Slot : MonoBehaviour
 {
     Item item;
@@ -14,6 +15,7 @@ public class Slot : MonoBehaviour
         bgPanel.SetActive(false);
     }
 
+    //itemのslotボタンが押されたとき呼ばれる関数
     public bool OnSelectedSlot()
     {
         if(item == null)
@@ -21,13 +23,6 @@ public class Slot : MonoBehaviour
             return false;
         }
         bgPanel.SetActive(true);
-        //戻り値がある関数でも、戻り値の型以外を
-        //関数の中に記述してもOK。bool型だとbool型の値の
-        //return処理をすることだけに気を取られていた。
-        //こちらの関数が実行されると戻り値を利用したい関数より
-        //こちらの関数の中身から先に実行される。
-        //わざわざbgPanel.SetActive(true);をしたいがために
-        //新しく関数ShowSlotBGPanel()を作ってしまった。
         return true;
     }
 
@@ -61,3 +56,10 @@ public class Slot : MonoBehaviour
         image.sprite = item.sprite;
     }
 }
+//戻り値がある関数でも、戻り値の型以外を
+//関数の中に記述してもOK。bool型だとbool型の値の
+//return処理をすることだけに気を取られていた。
+//こちらの関数が実行されると戻り値を利用したい関数より
+//こちらの関数の中身から先に実行される。
+//わざわざbgPanel.SetActive(true);をしたいがために
+//新しく関数ShowSlotBGPanel()を作ってしまった。
