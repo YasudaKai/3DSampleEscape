@@ -29,6 +29,7 @@ public class ItemBox : MonoBehaviour
             slot.HideSlotBGPanel();
         }
 
+        //一旦空にして、そのあと入れ直す。
         selectedSlot = null;
         //この処理方法がわからず、ZoomPanelが開き続けていた。
 

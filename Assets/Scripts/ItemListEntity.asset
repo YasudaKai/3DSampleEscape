@@ -15,5 +15,9 @@ MonoBehaviour:
   itemList:
   - type: 0
     sprite: {fileID: 21300000, guid: c71428d5662a74a4581dde78699f1c0b, type: 3}
+    zoomObj: {fileID: 6025189137218589461, guid: 142d2e5146a2c0441a4ad19d07ad7ff4,
+      type: 3}
   - type: 1
     sprite: {fileID: 21300000, guid: 8dbe89e08ca57d049b4dd9d6aa7173ec, type: 3}
+    zoomObj: {fileID: 4743679739894178019, guid: ffb528f66dad0e8439dcd6cf7e810882,
+      type: 3}

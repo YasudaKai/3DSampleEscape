@@ -6,19 +6,28 @@ using UnityEngine.UI;
 public class ZoomItemManager : MonoBehaviour
 {
     [SerializeField] GameObject panel;
+    [SerializeField] Transform objParent;
+    GameObject zoomObj;
 
+   
     public void ShowZoomPanel()
     {
         Item item = ItemBox.instance.GetSelectedItem();
         if(item != null)
         {
+            Destroy(zoomObj);
+
             panel.SetActive(true);
+
+            GameObject zoomObjPrefab = ItemGenerater.instance.GetZoomItem(item.type);
+            zoomObj = Instantiate(zoomObjPrefab, objParent);
         }
     }
 
     public void CloseZoomPanel()
     {
         panel.SetActive(false);
+        Destroy(zoomObj);
     }
-   
+
 }
