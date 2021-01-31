@@ -9,7 +9,10 @@ public class ZoomItemManager : MonoBehaviour
     [SerializeField] Transform objParent;
     GameObject zoomObj;
 
-   
+    private void Start()
+    {
+        panel.SetActive(false);
+    }
     public void ShowZoomPanel()
     {
         Item item = ItemBox.instance.GetSelectedItem();
