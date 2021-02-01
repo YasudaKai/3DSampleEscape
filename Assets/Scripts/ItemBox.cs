@@ -60,14 +60,18 @@ public class ItemBox : MonoBehaviour
     // 持っている場合)引数を使えばいい。
     public bool TryUseItem(Item.Type type)
     {
+        //Slotを選択していなかった場合
         if(selectedSlot == null)
         {
             return false;
         }
         
+        //Slotを選択していた場合
         if (selectedSlot.GetItem().type == type)
         {
-            Debug.Log(type);
+            selectedSlot.SetItem(null);
+            selectedSlot.HideSlotBGPanel();
+
             return true;
         }
         return false;

@@ -16,8 +16,6 @@ public class PickUpObj : MonoBehaviour
 
     public void OnClickObj()
     {
-        //static化なしでItemBoxクラスの関数使う
-        //→結果：可能
         ItemBox.instance.SetItem(item);
         gameObject.SetActive(false);
     }

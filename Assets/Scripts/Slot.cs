@@ -53,7 +53,14 @@ public class Slot : MonoBehaviour
 
     void UpdateImage(Item item)
     {
-        image.sprite = item.sprite;
+        if(item == null)
+        {
+            image.sprite = null;
+        }
+        else
+        {
+            image.sprite = item.sprite;
+        }
     }
 }
 //戻り値がある関数でも、戻り値の型以外を
