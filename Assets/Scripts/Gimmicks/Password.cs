@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Password : MonoBehaviour
 {
+    public UnityEvent chestOpen;
     //Passwordが正解だったら、ゲームクリア
     //Passwordの正解の数字とPasswordButtonの数字が一致
     //したらクリア
@@ -15,7 +17,7 @@ public class Password : MonoBehaviour
     {
         if (IsClear())
         {
-           Debug.Log("Clear!!!");
+            Debug.Log("Clear!!!");
         }
     }
 
